@@ -3,38 +3,60 @@ import Navbar from "../components/Navbar"
 import martImage from '../assets/toko.jpg'
 import doc from '../assets/dokumen.png'
 import visual from '../assets/Visual.png'
-import product1 from '../assets/product1.png'
+// import product1 from '../assets/product1.png'
+import Swiper from "../components/Swiper"
+import { IoChatbubbleOutline, IoTimeOutline } from "react-icons/io5";
+import { BsChatQuote } from "react-icons/bs";
+import { AiOutlineRead } from "react-icons/ai";
+import ProductCard from "../components/ProductCard"
+import ServiceCard from "../components/ServiceCard"
+import { dataProduct } from "../lib/data"
 
 const Home = () => {
+
     return (
         <>
             <Box bgColor={'#F2F7FF'} w={'100vw'} h={'100vh'}>
                 <Navbar />
                 {/* home */}
                 <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} alignItems={'center'} mt={'8rem'} gap={'7rem'}>
-                    <Box>
+                    <Box w={'680px'}>
                         <Text color={'#00BFA5'} fontSize={'32px'}>Group 1</Text>
                         <Text fontSize={'52px'} fontWeight={'bold'} mt={'10px'}>SEARCH TOP SELLER ITEMS</Text>
-                        <Text color={'#6C87AE'} w={'520px'} fontSize={'22px'} mt={'14px'}>Supplier recommendation in sales using Item based collaborative filtering method</Text>
-                        <Button bgColor='#3A8EF6' color={'white'} colorfScheme="teal" mt={'30px'} w={'185px'} h={'55px'} fontSize={'18px'} rounded={'100px'} >GET STARTED</Button>
+                        <Text color={'#6C87AE'} fontSize={'22px'} mt={'14px'}>Supplier recommendation in sales using Item based collaborative filtering method</Text>
+                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={'215px'} h={'55px'} rounded={'100px'}><IoChatbubbleOutline fontSize={'25px'} /> <Text fontSize={'18px'} ml={'6px'}>GET STARTED</Text></Button>
                     </Box>
                     <Box>
-                        <Image src={martImage} border={'4px solid #3A8EF6'} rounded={'80%'} w={'520px'} h={'450px'} />
+                        <Image src={martImage} border={'4px solid #3A8EF6'} rounded={'80%'} w={'580px'} h={'450px'} />
                     </Box>
                 </Box>
-                <Flex color={'white'} mx={'auto'} w={'920px'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={'210px'}>
-                    <Box bg={'#1678F2'} p={'16px'} rounded={'12px'} shadow={'lg'}>
-                        <Text fontWeight={'semibold'} fontSize={'23px'}>14 hour service</Text>
-                        <Text fontSize={'18px'}>lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                    </Box>
-                    <Box bg={'#1678F2'} p={'16px'} rounded={'12px'} shadow={'lg'}>
+                <Flex color={'white'} mx={'auto'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={'12rem'}>
+                    {/* <Box bg={'#1678F2'} px={'10px'} rounded={'12px'} shadow={'lg'}>
+                        <Flex justifyContent={'center'} alignItems={'center'} gap={'10px'}>
+                            <IoTimeOutline fontSize={'120px'} />
+                            <Box>
+                                <Text fontWeight={'semibold'} fontSize={'23px'}>4 hour service</Text>
+                                <Text fontSize={'18px'}>lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+                            </Box>
+                        </Flex>
+                    </Box> */}
+                    {/* <Box bg={'#1678F2'} p={'16px'} rounded={'12px'} shadow={'lg'}>
                         <Text fontWeight={'semibold'} fontSize={'23px'}>15 years of experience</Text>
                         <Text fontSize={'18px'}>lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                    </Box>
-                    <Box bg={'#1678F2'} p={'16px'} rounded={'12px'} shadow={'lg'}>
+                    </Box> */}
+                    {/* <Box bg={'#1678F2'} p={'16px'} rounded={'12px'} shadow={'lg'}>
                         <Text fontWeight={'semibold'} fontSize={'23px'}>High quality items</Text>
                         <Text fontSize={'18px'}>lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                    </Box>
+                    </Box> */}
+                    <ServiceCard title={'4 hour service'} width={'380px'}>
+                        <IoTimeOutline fontSize={'120px'} />
+                    </ServiceCard>
+                    <ServiceCard title={'15 years of experience'} width={'400px'}>
+                        <IoTimeOutline fontSize={'120px'} />
+                    </ServiceCard>
+                    <ServiceCard title={'High quality items'} width={'380px'}>
+                        <IoTimeOutline fontSize={'120px'} />
+                    </ServiceCard>
                 </Flex>
             </Box>
             {/* about */}
@@ -48,7 +70,7 @@ const Home = () => {
                         <Text fontSize={'32px'} fontWeight={'bold'} mt={'10px'}>BUDGET SHOPPING SOLUTION AT AFFORDABLE PRICES</Text>
                         <Text color={'#6C87AE'} fontSize={'22px'} mt={'10px'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam proin nibh cursus at sed sagittis amet, sed. Tristique id nibh lobortis
                         </Text>
-                        <Button bgColor='#3A8EF6' w={'185px'} h={'55px'} color={'white'} colorScheme="teal" mt={'13px'} rounded={'100px'}>Contact Us</Button>
+                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={'215px'} h={'55px'} rounded={'100px'}><BsChatQuote fontSize={'25px'} /> <Text fontSize={'18px'} ml={'8px'}>Contact Us</Text></Button>
                     </Box>
                 </Box>
             </Box>
@@ -60,7 +82,7 @@ const Home = () => {
                         <Text fontSize={'32px'} fontWeight={'bold'} mt={'10px'} w={'456px'}>COLLABORATIVE FILTERING ALGORITHM BY ITEM</Text>
                         <Text color={'#6C87AE'} w={'456px'} fontSize={'22px'} mt={'10px'}>Collaborative filtering by item is a collaborative filtering technique that uses similarities between items to recommend items to users.
                         </Text>
-                        <Button bgColor='#3A8EF6' w={'185px'} h={'55px'} color={'white'} colorScheme="teal" mt={'30px'} rounded={'100px'}>Read More</Button>
+                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={'215px'} h={'55px'} rounded={'100px'}><AiOutlineRead fontSize={'25px'} /> <Text fontSize={'18px'} ml={'8px'}>Read More</Text></Button>
                     </Box>
                     <Box>
                         <Image src={visual} w={'633.5px'} rounded={'30px'} h={'541.71px'} />
@@ -73,52 +95,31 @@ const Home = () => {
                         <Text fontWeight={'semibold'} fontSize={'32px'}>Top Seller</Text>
                         <Text fontWeight={'semibold'} fontSize={'32px'}>view all</Text>
                     </Flex>
-                    <Flex w={'80%'} mx={'auto'} mt={'30px'} gap={'68px'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
-                        <Box w={'346px'} h={'464px'} rounded={'24px'} display={'flex'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
-                            <Image src={product1} w={'230px'} h={'180px'} mx={'auto'} />
-                            <Text textAlign={'left'} fontWeight={'bold'} fontSize={'22px'} mt={'20px'}>Groceries</Text>
-                            <Text textAlign={'left'} fontSize={'22px'} color={'#6C87AE'}>Various kinds of rice brands with affordable prices and quality</Text>
-                            <Button bgColor='#3A8EF6' w={'full'} h={'56px'} color={'white'} colorScheme="teal" mt={'13px'} mx={'auto'} rounded={'100px'}>Book Now</Button>
-                        </Box>
-                        <Box w={'346px'} h={'464px'} rounded={'24px'} display={'flex'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
-                            <Image src={product1} w={'230px'} h={'180px'} mx={'auto'} />
-                            <Text textAlign={'left'} fontWeight={'bold'} fontSize={'22px'} mt={'20px'}>Groceries</Text>
-                            <Text textAlign={'left'} fontSize={'22px'} color={'#6C87AE'}>Various kinds of rice brands with affordable prices and quality</Text>
-                            <Button bgColor='#3A8EF6' w={'full'} h={'56px'} color={'white'} colorScheme="teal" mt={'13px'} mx={'auto'} rounded={'100px'}>Book Now</Button>
-                        </Box>
-                        <Box w={'346px'} h={'464px'} rounded={'24px'} display={'flex'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
-                            <Image src={product1} w={'230px'} h={'180px'} mx={'auto'} />
-                            <Text textAlign={'left'} fontWeight={'bold'} fontSize={'22px'} mt={'20px'}>Groceries</Text>
-                            <Text textAlign={'left'} fontSize={'22px'} color={'#6C87AE'}>Various kinds of rice brands with affordable prices and quality</Text>
-                            <Button bgColor='#3A8EF6' w={'full'} h={'56px'} color={'white'} colorScheme="teal" mt={'13px'} mx={'auto'} rounded={'100px'}>Book Now</Button>
-                        </Box>
-                        <Box w={'346px'} h={'464px'} rounded={'24px'} display={'flex'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
-                            <Image src={product1} w={'230px'} h={'180px'} mx={'auto'} />
-                            <Text textAlign={'left'} fontWeight={'bold'} fontSize={'22px'} mt={'20px'}>Groceries</Text>
-                            <Text textAlign={'left'} fontSize={'22px'} color={'#6C87AE'}>Various kinds of rice brands with affordable prices and quality</Text>
-                            <Button bgColor='#3A8EF6' w={'full'} h={'56px'} color={'white'} colorScheme="teal" mt={'13px'} mx={'auto'} rounded={'100px'}>Book Now</Button>
-                        </Box>
-                        <Box w={'346px'} h={'464px'} rounded={'24px'} display={'flex'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
-                            <Image src={product1} w={'230px'} h={'180px'} mx={'auto'} />
-                            <Text textAlign={'left'} fontWeight={'bold'} fontSize={'22px'} mt={'20px'}>Groceries</Text>
-                            <Text textAlign={'left'} fontSize={'22px'} color={'#6C87AE'}>Various kinds of rice brands with affordable prices and quality</Text>
-                            <Button bgColor='#3A8EF6' w={'full'} h={'56px'} color={'white'} colorScheme="teal" mt={'13px'} mx={'auto'} rounded={'100px'}>Book Now</Button>
-                        </Box>
-                        <Box w={'346px'} h={'464px'} rounded={'24px'} display={'flex'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
-                            <Image src={product1} w={'230px'} h={'180px'} mx={'auto'} />
-                            <Text textAlign={'left'} fontWeight={'bold'} fontSize={'22px'} mt={'20px'}>Groceries</Text>
-                            <Text textAlign={'left'} fontSize={'22px'} color={'#6C87AE'}>Various kinds of rice brands with affordable prices and quality</Text>
-                            <Button bgColor='#3A8EF6' w={'full'} h={'56px'} color={'white'} colorScheme="teal" mt={'13px'} mx={'auto'} rounded={'100px'}>Book Now</Button>
-                        </Box>
+                    <Flex w={'80%'} mx={'auto'} mt={'30px'} gap={'60px'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
+
+                        {/* <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard /> */}
+                        {dataProduct.slice(0, 6).map((data, index) => (
+                            <ProductCard key={index} title={data.product} desc={data.description} image={data.imageUrl} />
+                        ))}
                     </Flex>
                 </Box>
             </Box>
-            <Box w={'100vw'} h={'80vh'} bgColor={'#F2F7FF'}>
+            <Box w={'100vw'} h={'auto'} pb={'50px'} bgColor={'#F2F7FF'}>
                 <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} pt={'12rem'}>
                     <Text fontSize={'32px'} fontWeight={'bold'} mt={'10px'} w={'676px'} textAlign={'center'}>What our great customers say about ARKAMART</Text>
                     <Text color={'#6C87AE'} fontSize={'22px'} mt={'10px'} w={'676px'} textAlign={'center'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</Text>
+                    {/* <Flex w={'980px'}>
+                    </Flex> */}
+                    <Box w={'80%'} mt={'50px'} mx={'auto'}>
+                        <Swiper />
+                    </Box>
                 </Box>
             </Box>
+
         </>
     )
 }

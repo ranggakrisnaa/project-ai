@@ -1,0 +1,8 @@
+.active {
+    color: #3A8EF6;
+    transform: scale(1.2);
+}
+
+.pending {
+    color: #6C87AE;
+}
