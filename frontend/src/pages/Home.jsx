@@ -10,9 +10,26 @@ import { BsChatQuote } from "react-icons/bs";
 import { AiOutlineRead } from "react-icons/ai";
 import ProductCard from "../components/ProductCard"
 import ServiceCard from "../components/ServiceCard"
-import { dataProduct } from "../lib/data"
+import { useEffect, useState } from "react"
+import { getAllProduct } from "../fetch/product"
 
 const Home = () => {
+    const [product, setProduct] = useState({})
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            try {
+                const data = await getAllProduct()
+                setProduct(data)
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        fetchProduct()
+    }, [])
+    console.log(product);
 
     return (
         <>
@@ -102,9 +119,48 @@ const Home = () => {
                         <ProductCard />
                         <ProductCard />
                         <ProductCard /> */}
-                        {dataProduct.slice(0, 6).map((data, index) => (
+                        {/* {dataProduct.slice(0, 6).map((data, index) => (
                             <ProductCard key={index} title={data.product} desc={data.description} image={data.imageUrl} />
-                        ))}
+                        ))} */}
+
+                        {/* {
+                            product.productDetail ?
+                                product.productDetail.map((recommendation, index) =>
+                                    // const detail = product.productDetail.find(detail => detail.id == recommendation.id);
+                                    // console.log('Recommendation:', recommendation);
+                                    // console.log('Detail:', detail);
+                                    // if (detail) {
+                                    //     return (
+                                    //         <ProductCard key={index} title={recommendation?.id} image={detail?.img_product} desc={detail?.description_product} />
+                                    //     );
+                                    // }
+
+
+                                    <ProductCard key={index} title={recommendation.product_name} image={recommendation.img_product} desc={recommendation.description_product} />
+
+                                ) :
+                                <div>Loading...</div>
+                        } */}
+                        {
+
+                            product.productDetail && product.productRecomendation ?
+                                product.productRecomendation.map((recommendation, index) => {
+                                    const detail = product.productDetail.find(detail => detail.product_name == recommendation.id);
+                                    console.log('Recommendation:', recommendation);
+                                    console.log('Detail:', detail);
+                                    if (detail) {
+                                        return (
+                                            <ProductCard key={index} title={recommendation?.id} image={detail?.img_product} desc={detail?.description_product} />
+                                        );
+                                    }
+
+                                }
+                                ) :
+                                <div>Loading...</div>
+
+                        }
+
+
                     </Flex>
                 </Box>
             </Box>
