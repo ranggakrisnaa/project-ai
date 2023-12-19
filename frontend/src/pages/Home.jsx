@@ -150,7 +150,7 @@ const Home = () => {
                                     console.log('Detail:', detail);
                                     if (detail) {
                                         return (
-                                            <ProductCard key={index} title={recommendation?.id} image={detail?.img_product} desc={detail?.description_product} />
+                                            <ProductCard key={index} rating={recommendation.rating} title={recommendation?.id} image={detail?.img_product} desc={detail?.description_product} />
                                         );
                                     }
 
