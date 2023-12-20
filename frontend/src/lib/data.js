@@ -119,15 +119,15 @@ export const navItems = [
         item: "Home",
     },
     {
-        nav: "/abouts",
+        nav: "/about",
         item: "About",
     },
     {
-        nav: "/methods",
+        nav: "/method",
         item: "Method",
     },
     {
-        nav: "/contact-us",
+        nav: "/contact",
         item: "Contact Us",
     },
     {

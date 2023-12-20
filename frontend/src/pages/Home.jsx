@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, Image, Skeleton, Text } from "@chakra-ui/react"
 import Navbar from "../components/Navbar"
 import martImage from '../assets/toko.jpg'
 import doc from '../assets/dokumen.png'
@@ -19,19 +19,18 @@ const Home = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        const fetchProduct = async () => {
-            try {
-                const data = await getAllProduct()
-                setProduct(data)
-
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
         fetchProduct()
     }, [])
-    console.log(product);
+
+    const fetchProduct = async () => {
+        try {
+            const data = await getAllProduct()
+            setProduct(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 
     return (
         <>
@@ -49,7 +48,7 @@ const Home = () => {
                         <Image src={martImage} border={'4px solid #3A8EF6'} rounded={'80%'} w={'580px'} h={'450px'} />
                     </Box>
                 </Box>
-                <Flex color={'white'} mx={'auto'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={{lg:'6rem',xl:"8rem"}}>
+                <Flex color={'white'} mx={'auto'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={{ lg: '6rem', xl: "11rem" }}>
                     {/* <Box bg={'#1678F2'} px={'10px'} rounded={'12px'} shadow={'lg'}>
                         <Flex justifyContent={'center'} alignItems={'center'} gap={'10px'}>
                             <IoTimeOutline fontSize={'120px'} />
@@ -79,7 +78,7 @@ const Home = () => {
                 </Flex>
             </Box>
             {/* about */}
-            <Box w={'100vw'} h={'100vh'}>
+            <Box w={'100vw'} h={'100vh'} id="about">
                 <Box display={'flex'} w={'90%'} mx={"auto"} justifyContent={'center'} alignItems={'center'} pt={'16rem'} gap={'8rem'}>
                     <Box>
                         <Image src={doc} w={'526px'} border={'4px solid #3A8EF6'} rounded={'30px'} h={'371.55px'} />
@@ -94,7 +93,7 @@ const Home = () => {
                 </Box>
             </Box>
             {/* method */}
-            <Box w={'100vw'} h={'80vh'} bgColor={'#F2F7FF'}>
+            <Box w={'100vw'} h={'80vh'} bgColor={'#F2F7FF'} id="method">
                 <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} alignItems={'center'} gap={'7rem'} pt={'7rem'}>
                     <Box>
                         <Text color={'#00BFA5'} fontSize={'28px'}>Method</Text>
@@ -112,7 +111,7 @@ const Home = () => {
                 <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'space-between'} alignItems={'center'} flexDir={'column'}>
                     <Flex w={'80%'} mx={'auto'} justifyContent={'space-between'}>
                         <Text fontWeight={'semibold'} fontSize={'32px'}>Top Seller</Text>
-                        <Text fontWeight={'semibold'} fontSize={'32px'} _hover={{cursor:'pointer'}} onClick={()=>navigate('/items')}>view all</Text>
+                        <Text fontWeight={'semibold'} fontSize={'32px'} _hover={{ cursor: 'pointer' }} onClick={() => navigate('/items')}>view all</Text>
                     </Flex>
                     <Flex w={'80%'} mx={'auto'} mt={'30px'} gap={'60px'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
 
@@ -148,8 +147,7 @@ const Home = () => {
                             product.productDetail && product.productRecomendation ?
                                 product.productRecomendation.slice(0, 6).map((recommendation, index) => {
                                     const detail = product.productDetail.find(detail => detail.product_name == recommendation.id);
-                                    console.log('Recommendation:', recommendation);
-                                    console.log('Detail:', detail);
+
                                     if (detail) {
                                         return (
                                             <ProductCard key={index} rating={recommendation.rating} title={recommendation?.id} image={detail?.img_product} desc={detail?.description_product} />
@@ -158,15 +156,25 @@ const Home = () => {
 
                                 }
                                 ) :
-                                <div>Loading...</div>
+                                Array.from({ length: 6 }, (_, index) => (
+                                    <Box w={'346px'} key={index} h={'524px'} rounded={'24px'} display={'flex'} shadow={'md'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
+                                        <Skeleton w={'full'} h={'180px'} rounded={'10px'} />
+                                        <Box mt={'10px'} display={'flex'} alignItems={'center'}>
+                                            <Skeleton w={'full'} h={'30px'} rounded={'10px'} mb={'10px'} />
+                                        </Box>
+                                        <Skeleton w={'full'} h={'80px'} mb={'20px'} rounded={'10px'} />
+                                        <Skeleton w={'full'} h={'80px'} mb={'20px'} rounded={'10px'} />
+                                        <Skeleton w={'full'} h={'56px'} rounded={'100px'} />
+                                    </Box>
+                                ))
 
                         }
 
 
                     </Flex>
                 </Box>
-            </Box>
-            <Box w={'100vw'} h={'auto'} pb={'50px'} bgColor={'#F2F7FF'}>
+            </Box >
+            <Box w={'100vw'} h={'auto'} pb={'50px'} bgColor={'#F2F7FF'} id="contact">
                 <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} pt={'12rem'}>
                     <Text fontSize={'32px'} fontWeight={'bold'} mt={'10px'} w={'676px'} textAlign={'center'}>What our great customers say about ARKAMART</Text>
                     <Text color={'#6C87AE'} fontSize={'22px'} mt={'10px'} w={'676px'} textAlign={'center'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</Text>
