@@ -12,9 +12,11 @@ import ProductCard from "../components/ProductCard"
 import ServiceCard from "../components/ServiceCard"
 import { useEffect, useState } from "react"
 import { getAllProduct } from "../fetch/product"
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
     const [product, setProduct] = useState({})
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -110,7 +112,7 @@ const Home = () => {
                 <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'space-between'} alignItems={'center'} flexDir={'column'}>
                     <Flex w={'80%'} mx={'auto'} justifyContent={'space-between'}>
                         <Text fontWeight={'semibold'} fontSize={'32px'}>Top Seller</Text>
-                        <Text fontWeight={'semibold'} fontSize={'32px'}>view all</Text>
+                        <Text fontWeight={'semibold'} fontSize={'32px'} _hover={{cursor:'pointer'}} onClick={()=>navigate('/items')}>view all</Text>
                     </Flex>
                     <Flex w={'80%'} mx={'auto'} mt={'30px'} gap={'60px'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
 
@@ -144,7 +146,7 @@ const Home = () => {
                         {
 
                             product.productDetail && product.productRecomendation ?
-                                product.productRecomendation.map((recommendation, index) => {
+                                product.productRecomendation.slice(0, 6).map((recommendation, index) => {
                                     const detail = product.productDetail.find(detail => detail.product_name == recommendation.id);
                                     console.log('Recommendation:', recommendation);
                                     console.log('Detail:', detail);

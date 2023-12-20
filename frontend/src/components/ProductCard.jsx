@@ -8,7 +8,7 @@ const ProductCard = ({ title, desc, image, rating }) => {
     // eslint-disable-next-line react/prop-types
     const rate = parseFloat(rating.toFixed(2));
     return (
-        <Box w={'346px'} h={'524px'} rounded={'24px'} display={'flex'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
+        <Box w={'346px'} h={'524px'} rounded={'24px'} display={'flex'} shadow={'md'} justifyContent={'center'} flexDir={'column'} bgColor={'#FFFFFF'} padding={'28px'}>
             <Image src={`${image}`} w={'230px'} h={'180px'} mx={'auto'} />
             <Box mt={'10px'} display={'flex'} alignItems={'center'}>
                 <Rating placeholderRating={rate} emptySymbol={<IoIosStarOutline fontSize={'22px'} />} placeholderSymbol={<IoIosStar fontSize={'22px'} />} fullSymbol={<IoIosStar fontSize={'22px'} />} /> <Text fontSize={'18px'} marginLeft={'3px'}>{`/${rate}`}</Text>
