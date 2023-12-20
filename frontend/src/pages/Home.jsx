@@ -47,7 +47,7 @@ const Home = () => {
                         <Image src={martImage} border={'4px solid #3A8EF6'} rounded={'80%'} w={'580px'} h={'450px'} />
                     </Box>
                 </Box>
-                <Flex color={'white'} mx={'auto'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={'12rem'}>
+                <Flex color={'white'} mx={'auto'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={{lg:'6rem',xl:"8rem"}}>
                     {/* <Box bg={'#1678F2'} px={'10px'} rounded={'12px'} shadow={'lg'}>
                         <Flex justifyContent={'center'} alignItems={'center'} gap={'10px'}>
                             <IoTimeOutline fontSize={'120px'} />
