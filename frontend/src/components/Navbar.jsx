@@ -41,21 +41,6 @@ const Navbar = () => {
                             </NavLink>
                         ))
                     } */}
-                    {/* <NavLink
-                        to={"/"}
-                        onClick={() => handleItemClick('home')}
-                        color={activeItem === 'home' ? '#3A8EF6' : '#6C87AE'}
-                        transform={activeItem === 'home' ? 'scale(1.2)' : ''}
-                    >
-                        <Text fontSize={'18px'} transition={'0.1s all ease-out'} _hover={{ cursor: 'pointer', color: '#3A8EF6', transform: 'scale(1.2)' }}>Home</Text>
-                    </NavLink>
-                    <Link
-                        href="#about"
-                        onClick={() => handleItemClick('about')}
-                        color={activeItem === 'about' ? '#3A8EF6' : '#6C87AE'}
-                    >
-                        <Text fontSize={'18px'} transition={'0.1s all ease-out'} _hover={{ cursor: 'pointer', color: '#3A8EF6', transform: 'scale(1.2)' }}>About</Text>
-                    </Link> */}
                     <Link
                         href="/"
                         onClick={() => handleItemClick('home')}

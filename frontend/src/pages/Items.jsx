@@ -7,9 +7,6 @@ import { BsSearch } from "react-icons/bs";
 
 const Items = () => {
   const [product, setProduct] = useState({});
-  // const [search, setSearch] = useState('')
-  // const [title, setTitle] = useState('')
-  // const [rate, setRate] = useState('') 
   const [formData, setFormData] = useState({
     search: '',
     title: '',
@@ -34,121 +31,8 @@ const Items = () => {
     setFormData({ ...formData, [name]: value })
   }
 
-  // // const renderProduct = () => {
-  // //   // product.productDetail && product.productRecomendation ? (
-  // //   //   search
-  // //   //     ? product.productRecomendation
-  // //   //       .filter((item) =>
-  // //   //         item.id.toLowerCase().includes(search.toLowerCase())
-  // //   //       )
-  // //   //       .map((recommendation, index) => {
-  // //   //         const detail = product.productDetail.find(
-  // //   //           (detail) => detail.product_name === recommendation.id
-  // //   //         );
-  // //   //         if (detail) {
-  // //   //           return (
-  // //   //             <ProductDetailCard
-  // //   //               key={index}
-  // //   //               rating={recommendation.rating}
-  // //   //               title={recommendation.id}
-  // //   //               image={detail.img_product}
-  // //   //               desc={detail.description_product}
-  // //   //             />
-  // //   //           );
-  // //   //         }
-  // //   //         return null;
-  // //   //       })
-  // //   //     : product.productRecomendation.map(
-  // //   //       (recommendation, index) => {
-  // //   //         const detail = product.productDetail.find(
-  // //   //           (detail) => detail.product_name === recommendation.id
-  // //   //         );
-  // //   //         if (detail) {
-  // //   //           return (
-  // //   //             <ProductDetailCard
-  // //   //               key={index}
-  // //   //               rating={recommendation.rating}
-  // //   //               title={recommendation.id}
-  // //   //               image={detail.img_product}
-  // //   //               desc={detail.description_product}
-  // //   //             />
-  // //   //           );
-  // //   //         }
-  // //   //         return null;
-  // //   //       }
-  // //   //     )
-
-  // //   // ) : (
-  // //   //   Array.from({ length: 10 }, (_, index) => (
-  // //   //     <Box w={'100%'} key={index} display={'flex'} flexWrap={'wrap'} gap={'20px'} alignItems={'center'} h={'200px'} rounded={'20px'} bgColor={'#FFFFFF'} mb={'20px'} shadow={'md'}>
-  // //   //       <Skeleton w={'180px'} h={'180px'} m={'12px'} rounded={'10px'} />
-  // //   //       <Box w={'600px'} h={'full'} borderRight={'2px solid #E8E8E8'} pr={'20px'}>
-  // //   //         <Skeleton w={'full'} h={'60px'} mb={'22px'} mt={'12px'} rounded={'10px'} />
-  // //   //         <Skeleton w={'full'} h={'60px'} rounded={'10px'} />
-  // //   //       </Box>
-  // //   //       <Box display={'flex'} color={'#3A8EF6'} justifyContent={'center'} gap={'12px'} h={'full'} alignItems={'center'} flexDirection={'column'}>
-  // //   //         <Skeleton w={'80px'} h={'30px'} mb={'12px'} rounded={'10px'} />
-  // //   //         <Skeleton w={'80px'} h={'30px'} mb={'12px'} rounded={'10px'} />
-  // //   //         <Skeleton w={'80px'} h={'30px'} mb={'12px'} rounded={'10px'} />
-  // //   //       </Box>
-  // //   //     </Box>
-  // //   //   ))
-  // //   // )
-
-
-  // // }
-  // const sortTitle = () => {
-  //   if (formData.title === 'ASC') {
-  //     return product.productRecomendation.sort((a, b) => a.id - b.id)
-  //   } else {
-  //     return product.productRecomendation.sort((a, b) => b.id - a.id)
-  //   }
-  // }
-
   const renderProduct = () => {
     if (product.productDetail && product.productRecomendation) {
-      // return (
-      //   // formData.search
-      //   //   ? product.productRecomendation
-      //   //     .filter((item) =>
-      //   //       item.id.toLowerCase().includes(formData.search.toLowerCase())
-      //   //     )
-      //   //     .map((recommendation, index) => {
-      //   //       const detail = product.productDetail.find(
-      //   //         (detail) => detail.product_name === recommendation.id
-      //   //       );
-      //   //       if (detail) {
-      //   //         return (
-      //   //           <ProductDetailCard
-      //   //             key={index}
-      //   //             rating={recommendation.rating}
-      //   //             title={recommendation.id}
-      //   //             image={detail.img_product}
-      //   //             desc={detail.description_product}
-      //   //           />
-      //   //         );
-      //   //       }
-      //   //       return null;
-      //   //     })
-      //   //   : product.productRecomendation.map((recommendation, index) => {
-      //   //     const detail = product.productDetail.find(
-      //   //       (detail) => detail.product_name === recommendation.id
-      //   //     );
-      //   //     if (detail) {
-      //   //       return (
-      //   //         <ProductDetailCard
-      //   //           key={index}
-      //   //           rating={recommendation.rating}
-      //   //           title={recommendation.id}
-      //   //           image={detail.img_product}
-      //   //           desc={detail.description_product}
-      //   //         />
-      //   //       );
-      //   //     }
-      //   //     return null;
-      //   //   })
-
-      // );
       const { search, title, rate } = formData;
       let filteredRecommendations = product.productRecomendation;
 

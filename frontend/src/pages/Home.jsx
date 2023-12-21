@@ -37,7 +37,7 @@ const Home = () => {
             <Box bgColor={'#F2F7FF'} w={'100vw'} h={'100vh'}>
                 <Navbar />
                 {/* home */}
-                <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} alignItems={'center'} mt={'8rem'} gap={'7rem'}>
+                <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} alignItems={'center'} mt={'4rem'} gap={'7rem'}>
                     <Box w={'680px'}>
                         <Text color={'#00BFA5'} fontSize={'32px'}>Group 1</Text>
                         <Text fontSize={'52px'} fontWeight={'bold'} mt={'10px'}>SEARCH TOP SELLER ITEMS</Text>
@@ -45,27 +45,10 @@ const Home = () => {
                         <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={'215px'} h={'55px'} rounded={'100px'}><IoChatbubbleOutline fontSize={'25px'} /> <Text fontSize={'18px'} ml={'6px'}>GET STARTED</Text></Button>
                     </Box>
                     <Box>
-                        <Image src={martImage} border={'4px solid #3A8EF6'} rounded={'80%'} w={'580px'} h={'450px'} />
+                        <Image src={martImage} border={'4px solid #3A8EF6'} rounded={'80%'} w={'580px'} h={'530px'} />
                     </Box>
                 </Box>
-                <Flex color={'white'} mx={'auto'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={{ lg: '6rem', xl: "11rem" }}>
-                    {/* <Box bg={'#1678F2'} px={'10px'} rounded={'12px'} shadow={'lg'}>
-                        <Flex justifyContent={'center'} alignItems={'center'} gap={'10px'}>
-                            <IoTimeOutline fontSize={'120px'} />
-                            <Box>
-                                <Text fontWeight={'semibold'} fontSize={'23px'}>4 hour service</Text>
-                                <Text fontSize={'18px'}>lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                            </Box>
-                        </Flex>
-                    </Box> */}
-                    {/* <Box bg={'#1678F2'} p={'16px'} rounded={'12px'} shadow={'lg'}>
-                        <Text fontWeight={'semibold'} fontSize={'23px'}>15 years of experience</Text>
-                        <Text fontSize={'18px'}>lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                    </Box> */}
-                    {/* <Box bg={'#1678F2'} p={'16px'} rounded={'12px'} shadow={'lg'}>
-                        <Text fontWeight={'semibold'} fontSize={'23px'}>High quality items</Text>
-                        <Text fontSize={'18px'}>lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                    </Box> */}
+                <Flex color={'white'} mx={'auto'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={{ lg: '6rem', xl: "7rem" }}>
                     <ServiceCard title={'4 hour service'} width={'380px'}>
                         <FaRegClock fontSize={'120px'} />
                     </ServiceCard>
@@ -114,34 +97,6 @@ const Home = () => {
                         <Text fontWeight={'semibold'} fontSize={'32px'} _hover={{ cursor: 'pointer' }} onClick={() => navigate('/items')}>view all</Text>
                     </Flex>
                     <Flex w={'80%'} mx={'auto'} mt={'30px'} gap={'60px'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
-
-                        {/* <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard /> */}
-                        {/* {dataProduct.slice(0, 6).map((data, index) => (
-                            <ProductCard key={index} title={data.product} desc={data.description} image={data.imageUrl} />
-                        ))} */}
-
-                        {/* {
-                            product.productDetail ?
-                                product.productDetail.map((recommendation, index) =>
-                                    // const detail = product.productDetail.find(detail => detail.id == recommendation.id);
-                                    // console.log('Recommendation:', recommendation);
-                                    // console.log('Detail:', detail);
-                                    // if (detail) {
-                                    //     return (
-                                    //         <ProductCard key={index} title={recommendation?.id} image={detail?.img_product} desc={detail?.description_product} />
-                                    //     );
-                                    // }
-
-
-                                    <ProductCard key={index} title={recommendation.product_name} image={recommendation.img_product} desc={recommendation.description_product} />
-
-                                ) :
-                                <div>Loading...</div>
-                        } */}
                         {
 
                             product.productDetail && product.productRecomendation ?
