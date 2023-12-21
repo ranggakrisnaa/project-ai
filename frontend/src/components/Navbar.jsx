@@ -5,13 +5,20 @@ import brand from "../assets/brand.png"
 import './Navbar.css'
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const [activeItem, setActiveItem] = useState('')
+    const navigate = useNavigate()
 
     const handleItemClick = (item) => {
         setActiveItem(item);
     };
+
+    const handlePage = (item) => {
+        setActiveItem(item);
+        navigate('/items')
+    }
 
 
     return (
@@ -78,8 +85,7 @@ const Navbar = () => {
                         <Text fontSize={'18px'} transition={'0.1s all ease-out'} _hover={{ cursor: 'pointer', color: '#3A8EF6', transform: 'scale(1.2)' }}>Contact Us</Text>
                     </Link>
                     <Link
-                        href="/items"
-                        onClick={() => handleItemClick('items')}
+                        onClick={() => handlePage('items')}
                         color={activeItem === 'items' ? '#3A8EF6' : '#6C87AE'}
                     >
                         <Text fontSize={'18px'} transition={'0.1s all ease-out'} _hover={{ cursor: 'pointer', color: '#3A8EF6', transform: 'scale(1.2)' }}>Items</Text>
