@@ -5,7 +5,8 @@ import doc from '../assets/dokumen.png'
 import visual from '../assets/Visual.png'
 // import product1 from '../assets/product1.png'
 import Swiper from "../components/Swiper"
-import { IoChatbubbleOutline, IoTimeOutline } from "react-icons/io5";
+import { IoChatbubbleOutline } from "react-icons/io5";
+import { FaLuggageCart, FaRegCheckCircle, FaRegClock } from "react-icons/fa";
 import { BsChatQuote } from "react-icons/bs";
 import { AiOutlineRead } from "react-icons/ai";
 import ProductCard from "../components/ProductCard"
@@ -30,7 +31,6 @@ const Home = () => {
             console.log(error);
         }
     }
-
 
     return (
         <>
@@ -67,13 +67,13 @@ const Home = () => {
                         <Text fontSize={'18px'}>lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
                     </Box> */}
                     <ServiceCard title={'4 hour service'} width={'380px'}>
-                        <IoTimeOutline fontSize={'120px'} />
+                        <FaRegClock fontSize={'120px'} />
                     </ServiceCard>
                     <ServiceCard title={'15 years of experience'} width={'400px'}>
-                        <IoTimeOutline fontSize={'120px'} />
+                        <FaRegCheckCircle fontSize={'120px'} />
                     </ServiceCard>
                     <ServiceCard title={'High quality items'} width={'380px'}>
-                        <IoTimeOutline fontSize={'120px'} />
+                        <FaLuggageCart fontSize={'120px'} />
                     </ServiceCard>
                 </Flex>
             </Box>
