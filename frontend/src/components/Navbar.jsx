@@ -23,24 +23,11 @@ const Navbar = () => {
 
     return (
         <Box w={'100vw'}>
-            <Flex justifyContent={'space-between'} alignItems={'center'} mx={'auto'} w={'80%'} p={'20px'}>
-                <Box>
+            <Flex justifyContent={'space-between'} alignItems={'center'} mx={'auto'} w={{ base: "100%", sm: '80%' }} p={'20px'}>
+                <Box w={{ base: "100px", md: "200px" }}>
                     <Image src={brand} />
                 </Box>
-                <Box display={'flex'} gap={'30px'} textColor={'#6C87AE'}>
-                    {/* {
-                        navItems.map((data, index) => (
-                            <NavLink
-                                key={index}
-                                to={data.nav}
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : ""
-                                }
-                            >
-                                <Text transition={'0.1s all ease-out'} _hover={{ cursor: 'pointer', color: '#3A8EF6', transform: 'scale(1.2)' }}>{data.item}</Text>
-                            </NavLink>
-                        ))
-                    } */}
+                <Box display={{ base: 'none', md: "flex" }} gap={'30px'} textColor={'#6C87AE'}>
                     <Link
                         href="/"
                         onClick={() => handleItemClick('home')}
@@ -77,10 +64,10 @@ const Navbar = () => {
                     </Link>
                 </Box>
                 <Box>
-                    <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" w={'175px'} h={'55px'} rounded={'100px'}><IoChatbubbleOutline fontSize={'25px'} /> <Text fontSize={'18px'} ml={'6px'}>BUY NOW</Text></Button>
+                    <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" w={{ base: "80px", md: '175px' }} h={{ base: "30px", md: '55px' }} rounded={'100px'}><IoChatbubbleOutline fontSize={{ base: "10px", md: '25px' }} /> <Text fontSize={{ base: "10px", md: '18px' }} ml={'6px'}>BUY NOW</Text></Button>
                 </Box>
-            </Flex>
-        </Box>
+            </Flex >
+        </Box >
     )
 }
 

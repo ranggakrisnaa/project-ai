@@ -114,9 +114,9 @@ const Items = () => {
     <>
       <Box w={"100vw"} h={"auto"} bgColor={"#FFFFF"} pb={"20px"}>
         <Navbar />
-        <Flex justifyContent={"center"} gap={"30px"}>
+        <Flex justifyContent={"center"} alignItems={{ base: "center", md: "start" }} gap={"30px"} flexDirection={{ base: "column-reverse", md: "row" }}>
           <Box
-            w={"1000px"}
+            w={{ base: "300px", md: "1000px" }}
             h={"auto"}
             bgColor={"#F2F7FF"}
             rounded={"30px"}

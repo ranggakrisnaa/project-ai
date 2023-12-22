@@ -37,64 +37,70 @@ const Home = () => {
             <Box bgColor={'#F2F7FF'} w={'100vw'} h={'100vh'}>
                 <Navbar />
                 {/* home */}
-                <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} alignItems={'center'} mt={'4rem'} gap={'7rem'}>
-                    <Box w={'680px'}>
-                        <Text color={'#00BFA5'} fontSize={'32px'}>Group 1</Text>
-                        <Text fontSize={'52px'} fontWeight={'bold'} mt={'10px'}>SEARCH TOP SELLER ITEMS</Text>
-                        <Text color={'#6C87AE'} fontSize={'22px'} mt={'14px'}>Supplier recommendation in sales using Item based collaborative filtering method</Text>
-                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={'215px'} h={'55px'} rounded={'100px'}><IoChatbubbleOutline fontSize={'25px'} /> <Text fontSize={'18px'} ml={'6px'}>GET STARTED</Text></Button>
+                <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} flexDirection={{ base: "column-reverse", md: "row" }} alignItems={'center'} mt={{ base: "2rem", md: '4rem' }} gap={{ base: "2rem", md: '7rem' }}>
+                    <Box w={{ base: "340px", md: '680px' }}>
+                        <Text color={'#00BFA5'} fontSize={{ base: "22px", md: '32px' }}>Group 1</Text>
+                        <Text fontSize={{ base: "28px", md: '52px' }} fontWeight={'bold'} mt={'10px'}>SEARCH TOP SELLER ITEMS</Text>
+                        <Text color={'#6C87AE'} fontSize={{ base: "17px", md: '22px' }} mt={'14px'}>Supplier recommendation in sales using Item based collaborative filtering method</Text>
+                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={{ base: "135px", md: '215px' }} h={'55px'} rounded={'100px'}><IoChatbubbleOutline fontSize={'25px'} /> <Text fontSize={{ base: "10px", md: '18px' }} ml={'6px'}>GET STARTED</Text></Button>
                     </Box>
                     <Box>
-                        <Image src={martImage} border={'4px solid #3A8EF6'} rounded={'80%'} w={'580px'} h={'530px'} />
+                        <Image src={martImage} border={'4px solid #3A8EF6'} rounded={'80%'} w={{ base: "240px", md: '580px' }} h={{ base: "240px", md: "530px" }} />
                     </Box>
                 </Box>
-                <Flex color={'white'} mx={'auto'} gap={'35px'} justifyContent={'center'} alignItems={'center'} mt={{ lg: '6rem', xl: "7rem" }}>
-                    <ServiceCard title={'4 hour service'} width={'380px'}>
-                        <FaRegClock fontSize={'120px'} />
+                <Flex color={'white'} mx={'auto'} gap={{ base: "25px", md: '35px' }} justifyContent={'center'} alignItems={'center'} mt={{ base: '4rem', xl: "7rem" }}>
+                    <ServiceCard title={'4 hour service'} width={{ base: "120px", md: '380px' }}>
+                        <Box fontSize={{ base: "30px", md: '120px' }}>
+                            <FaRegClock />
+                        </Box>
                     </ServiceCard>
-                    <ServiceCard title={'15 years of experience'} width={'400px'}>
-                        <FaRegCheckCircle fontSize={'120px'} />
+                    <ServiceCard title={'15 years of experience'} width={{ base: "120px", md: '400px' }}>
+                        <Box fontSize={{ base: "30px", md: '120px' }}>
+                            <FaRegCheckCircle />
+                        </Box>
                     </ServiceCard>
-                    <ServiceCard title={'High quality items'} width={'380px'}>
-                        <FaLuggageCart fontSize={'120px'} />
+                    <ServiceCard title={'High quality items'} width={{ base: "120px", md: '380px' }}>
+                        <Box fontSize={{ base: "30px", md: '120px' }}>
+                            <FaLuggageCart />
+                        </Box>
                     </ServiceCard>
                 </Flex>
             </Box>
             {/* about */}
             <Box w={'100vw'} h={'100vh'} id="about">
-                <Box display={'flex'} w={'90%'} mx={"auto"} justifyContent={'center'} alignItems={'center'} pt={'16rem'} gap={'8rem'}>
+                <Box display={'flex'} w={'80%'} mx={"auto"} flexDirection={{ base: "column", md: "row" }} justifyContent={'center'} alignItems={'center'} pt={{ base: "10rem", md: '16rem' }} gap={{ base: "4rem", md: '8rem' }}>
                     <Box>
-                        <Image src={doc} w={'526px'} border={'4px solid #3A8EF6'} rounded={'30px'} h={'371.55px'} />
+                        <Image src={doc} w={{ base: "280px", md: '526px' }} border={'4px solid #3A8EF6'} rounded={'30px'} h={{ base: "220px", md: '371.55px' }} />
                     </Box>
-                    <Box w={'580px'}>
-                        <Text color={'#00BFA5'} fontSize={'28px'}>About Arkamart</Text>
-                        <Text fontSize={'32px'} fontWeight={'bold'} mt={'10px'}>BUDGET SHOPPING SOLUTION AT AFFORDABLE PRICES</Text>
-                        <Text color={'#6C87AE'} fontSize={'22px'} mt={'10px'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam proin nibh cursus at sed sagittis amet, sed. Tristique id nibh lobortis
+                    <Box w={{ base: "348px", md: '580px' }}>
+                        <Text color={'#00BFA5'} fontSize={{ base: "22px", md: '32px' }}>About Arkamart</Text>
+                        <Text fontSize={{ base: "22px", md: '38px' }} fontWeight={'bold'} mt={'10px'}>BUDGET SHOPPING SOLUTION AT AFFORDABLE PRICES</Text>
+                        <Text color={'#6C87AE'} fontSize={{ base: "16px", md: '22px' }} mt={'10px'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam proin nibh cursus at sed sagittis amet, sed. Tristique id nibh lobortis
                         </Text>
-                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={'215px'} h={'55px'} rounded={'100px'}><BsChatQuote fontSize={'25px'} /> <Text fontSize={'18px'} ml={'8px'}>Contact Us</Text></Button>
+                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={{ base: "155px", md: '215px' }} h={'55px'} rounded={'100px'}><BsChatQuote fontSize={'25px'} /> <Text fontSize={{ base: "14px", md: '18px' }} ml={'8px'}>Contact Us</Text></Button>
                     </Box>
                 </Box>
             </Box>
             {/* method */}
             <Box w={'100vw'} h={'80vh'} bgColor={'#F2F7FF'} id="method">
-                <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} alignItems={'center'} gap={'7rem'} pt={'7rem'}>
-                    <Box>
-                        <Text color={'#00BFA5'} fontSize={'28px'}>Method</Text>
-                        <Text fontSize={'32px'} fontWeight={'bold'} mt={'10px'} w={'456px'}>COLLABORATIVE FILTERING ALGORITHM BY ITEM</Text>
-                        <Text color={'#6C87AE'} w={'456px'} fontSize={'22px'} mt={'10px'}>Collaborative filtering by item is a collaborative filtering technique that uses similarities between items to recommend items to users.
+                <Box display={'flex'} w={'80%'} mx={"auto"} flexDirection={{ base: "column-reverse", md: "row" }} justifyContent={'center'} alignItems={'center'} gap={{ base: "3rem", md: '7rem' }} pt={'7rem'}>
+                    <Box w={{ base: "348px", md: '580px' }}>
+                        <Text color={'#00BFA5'} fontSize={{ base: "22px", md: '32px' }}>Method</Text>
+                        <Text fontSize={{ base: "22px", md: '38px' }} fontWeight={'bold'} mt={'10px'} >COLLABORATIVE FILTERING ALGORITHM BY ITEM</Text>
+                        <Text color={'#6C87AE'} fontSize={{ base: "16px", md: '22px' }} mt={'10px'}>Collaborative filtering by item is a collaborative filtering technique that uses similarities between items to recommend items to users.
                         </Text>
-                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={'215px'} h={'55px'} rounded={'100px'}><AiOutlineRead fontSize={'25px'} /> <Text fontSize={'18px'} ml={'8px'}>Read More</Text></Button>
+                        <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={{ base: "155px", md: '215px' }} h={'55px'} rounded={'100px'}><AiOutlineRead fontSize={'25px'} /> <Text fontSize={{ base: "14px", md: '18px' }} ml={'8px'}>Read More</Text></Button>
                     </Box>
                     <Box>
-                        <Image src={visual} w={'633.5px'} rounded={'30px'} h={'541.71px'} />
+                        <Image src={visual} w={{ base: "333.5px", md: '633.5px' }} rounded={'30px'} h={{ base: "250px", md: '541.71px' }} />
                     </Box>
                 </Box>
             </Box>
             <Box w={'100vw'} h={'auto'} bgColor={'#F2F7FF'}>
-                <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'space-between'} alignItems={'center'} flexDir={'column'}>
+                <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'space-between'} alignItems={'center'} flexDir={'column'} pt={{ base: '12rem', md: "8rem" }}>
                     <Flex w={'80%'} mx={'auto'} justifyContent={'space-between'}>
-                        <Text fontWeight={'semibold'} fontSize={'32px'}>Top Seller</Text>
-                        <Text fontWeight={'semibold'} fontSize={'32px'} _hover={{ cursor: 'pointer' }} onClick={() => navigate('/items')}>view all</Text>
+                        <Text fontWeight={'semibold'} fontSize={{ base: "22px", md: '32px' }}>Top Seller</Text>
+                        <Text fontWeight={'semibold'} fontSize={{ base: "22px", md: '32px' }} _hover={{ cursor: 'pointer' }} onClick={() => navigate('/items')}>view all</Text>
                     </Flex>
                     <Flex w={'80%'} mx={'auto'} mt={'30px'} gap={'60px'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'}>
                         {
