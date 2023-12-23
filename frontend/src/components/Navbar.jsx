@@ -66,7 +66,7 @@ const Navbar = () => {
                     </Link>
                 </Box>
                 <Box>
-                    <Button bgColor='#3A8EF6' display={{ base: "none", md: "block" }} color={'white'} colorScheme="teal" w={{ base: "80px", md: '175px' }} h={{ base: "30px", md: '55px' }} rounded={'100px'}><IoChatbubbleOutline fontSize={{ base: "10px", md: '25px' }} /> <Text fontSize={{ base: "10px", md: '18px' }} ml={'6px'}>BUY NOW</Text></Button>
+                    <Button bgColor='#3A8EF6' display={{ base: "none", md: "flex" }} color={'white'} colorScheme="teal" w={{ base: "80px", md: '175px' }} h={{ base: "30px", md: '55px' }} rounded={'100px'} fontSize={{ base: "10px", md: '25px' }}><IoChatbubbleOutline /><Text fontSize={{ base: "10px", md: '18px' }} ml={'6px'}>BUY NOW</Text></Button>
                 </Box>
                 <Box display={{ base: 'flex', md: 'none' }} alignItems="center" w="10%">
                     {isOpen ? (

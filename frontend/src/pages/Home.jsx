@@ -14,6 +14,7 @@ import ServiceCard from "../components/ServiceCard"
 import { useEffect, useState } from "react"
 import { getAllProduct } from "../fetch/product"
 import { useNavigate } from "react-router-dom"
+import Footer from "../components/Footer"
 
 const Home = () => {
     const [product, setProduct] = useState({})
@@ -148,7 +149,7 @@ const Home = () => {
                     </Box>
                 </Box>
             </Box>
-
+            <Footer />
         </>
     )
 }

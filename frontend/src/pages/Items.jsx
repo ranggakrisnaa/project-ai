@@ -4,6 +4,7 @@ import { getAllProduct } from "../fetch/product";
 import { useEffect, useState } from "react";
 import ProductDetailCard from "../components/ProductDetailCard";
 import { BsSearch } from "react-icons/bs";
+import Footer from "../components/Footer";
 
 const Items = () => {
   const [product, setProduct] = useState({});
@@ -101,7 +102,7 @@ const Items = () => {
             h={"auto"} // Adjust height to 'auto' for responsiveness
             alignItems={"center"}
             flexDirection={"column"}
-            w={["100%", "100%", "20%", "20%"]} // Adjust width for different screen sizes
+            w={["100%", "100%", "20%", "10%"]} // Adjust width for different screen sizes
           >
             <Skeleton w={"60px"} h={"20px"} mb={"12px"} rounded={"10px"} />
             <Skeleton w={"60px"} h={"20px"} mb={"12px"} rounded={"10px"} />
@@ -162,6 +163,7 @@ const Items = () => {
           </Box>
         </Flex>
       </Box>
+      <Footer />
     </>
   );
 };
