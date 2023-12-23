@@ -1,16 +1,52 @@
+import { register } from "swiper/element/bundle";
 
-import { register } from 'swiper/element/bundle';
-
-import 'swiper/css';
+import "swiper/css";
 // import { Image } from '@chakra-ui/react';
-import UserTest from './UserTest';
+import UserTest from "./UserTest";
+import { useEffect, useRef } from "react";
 // import { Box } from '@chakra-ui/react';
 
-
 const Swiper = () => {
-    register();
+
+    const swiperRef = useRef(null);
+
+    useEffect(() => {
+        register();
+
+        const params = {
+            slidesPerView: 1.6,
+            breakpoints: {
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                },
+                300: {
+                    slidesPerView: 2.4,
+                    spaceBetween: 30,
+                },
+                768: {
+                    slidesPerView: 4,
+                },
+                800: {
+                    slidesPerView: 5,
+                },
+                1200: {
+                    slidesPerView: 3,
+                },
+            },
+            pagination: "true",
+            navigation: "true",
+            spaceBetween: 20,
+        };
+
+        Object.assign(swiperRef.current, params);
+
+        swiperRef.current.initialize();
+    }, []);
     return (
-        <swiper-container slides-per-view="1.5" space-between={20} speed="500" loop="true" pagination="true" navigation=" true">
+        <swiper-container
+            ref={swiperRef}
+        >
             <swiper-slide>
                 <UserTest />
             </swiper-slide>
@@ -24,7 +60,7 @@ const Swiper = () => {
                 <UserTest />
             </swiper-slide>
         </swiper-container>
-    )
-}
+    );
+};
 
-export default Swiper
+export default Swiper;

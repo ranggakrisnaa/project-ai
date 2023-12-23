@@ -137,11 +137,13 @@ const Home = () => {
             </Box >
             <Box w={'100vw'} h={'auto'} pb={'50px'} bgColor={'#F2F7FF'} id="contact">
                 <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} pt={'12rem'}>
-                    <Text fontSize={'32px'} fontWeight={'bold'} mt={'10px'} w={'676px'} textAlign={'center'}>What our great customers say about ARKAMART</Text>
-                    <Text color={'#6C87AE'} fontSize={'22px'} mt={'10px'} w={'676px'} textAlign={'center'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</Text>
-                    {/* <Flex w={'980px'}>
+                    <Box w={{ base: "348px", md: "678px" }}>
+                        <Text fontSize={{ base: "22px", md: '32px' }} fontWeight={'bold'} mt={'10px'} textAlign={'center'}>What our great customers say about ARKAMART</Text>
+                        <Text color={'#6C87AE'} fontSize={{ base: "22px", md: '32px' }} mt={'10px'} textAlign={'center'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</Text>
+                        {/* <Flex w={'980px'}>
                     </Flex> */}
-                    <Box w={'80%'} mt={'50px'} mx={'auto'}>
+                    </Box>
+                    <Box w={{ base: "100%", md: '80%' }} mt={'50px'} mx={'auto'}>
                         <Swiper />
                     </Box>
                 </Box>

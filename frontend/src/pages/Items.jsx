@@ -81,29 +81,31 @@ const Items = () => {
           flexWrap={"wrap"}
           gap={"20px"}
           alignItems={"center"}
-          h={"200px"}
+          h={"auto"} // Adjust height to 'auto' for responsiveness
           rounded={"20px"}
           bgColor={"#FFFFFF"}
           mb={"20px"}
           shadow={"md"}
+          p={"20px"} // Adjust padding for better spacing
         >
-          <Skeleton w={"180px"} h={"180px"} m={"12px"} rounded={"10px"} />
-          <Box w={"600px"} h={"full"} borderRight={"2px solid #E8E8E8"} pr={"20px"}>
-            <Skeleton w={"full"} h={"60px"} mb={"22px"} mt={"12px"} rounded={"10px"} />
-            <Skeleton w={"full"} h={"60px"} rounded={"10px"} />
+          <Skeleton w={["140px", "180px"]} h={["140px", "180px"]} m={"12px"} rounded={"10px"} />
+          <Box w={["100%", "100%", "480px", "600px"]} h={"auto"} borderRight={"2px solid #E8E8E8"} pr={"20px"}>
+            <Skeleton w={"full"} h={"50px"} mb={"16px"} mt={"12px"} rounded={"10px"} />
+            <Skeleton w={"full"} h={"50px"} rounded={"10px"} />
           </Box>
           <Box
             display={"flex"}
             color={"#3A8EF6"}
             justifyContent={"center"}
             gap={"12px"}
-            h={"full"}
+            h={"auto"} // Adjust height to 'auto' for responsiveness
             alignItems={"center"}
             flexDirection={"column"}
+            w={["100%", "100%", "20%", "20%"]} // Adjust width for different screen sizes
           >
-            <Skeleton w={"80px"} h={"30px"} mb={"12px"} rounded={"10px"} />
-            <Skeleton w={"80px"} h={"30px"} mb={"12px"} rounded={"10px"} />
-            <Skeleton w={"80px"} h={"30px"} mb={"12px"} rounded={"10px"} />
+            <Skeleton w={"60px"} h={"20px"} mb={"12px"} rounded={"10px"} />
+            <Skeleton w={"60px"} h={"20px"} mb={"12px"} rounded={"10px"} />
+            <Skeleton w={"60px"} h={"20px"} mb={"12px"} rounded={"10px"} />
           </Box>
         </Box>
       ));
@@ -116,7 +118,7 @@ const Items = () => {
         <Navbar />
         <Flex justifyContent={"center"} alignItems={{ base: "center", md: "start" }} gap={"30px"} flexDirection={{ base: "column-reverse", md: "row" }}>
           <Box
-            w={{ base: "300px", md: "1000px" }}
+            w={{ base: "300px", md: "1030px" }}
             h={"auto"}
             bgColor={"#F2F7FF"}
             rounded={"30px"}
@@ -127,7 +129,7 @@ const Items = () => {
             }
           </Box>
           <Box
-            w={"430px"}
+            w={{ base: "300px", md: "430px" }}
             h={"360px"}
             bgColor={"#F2F7FF"}
             rounded={"30px"}
