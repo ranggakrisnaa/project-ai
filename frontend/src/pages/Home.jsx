@@ -50,17 +50,17 @@ const Home = () => {
                     </Box>
                 </Box>
                 <Flex color={'white'} mx={'auto'} gap={{ base: "25px", md: '35px' }} justifyContent={'center'} alignItems={'center'} mt={{ base: '4rem', xl: "7rem" }}>
-                    <ServiceCard title={'4 hour service'} width={{ base: "120px", md: '380px' }}>
+                    <ServiceCard title={'4 hour service'} desc={'Our service ensures your needs are met with speed and efficiency.'} width={{ base: "120px", md: '380px' }}>
                         <Box fontSize={{ base: "30px", md: '120px' }}>
                             <FaRegClock />
                         </Box>
                     </ServiceCard>
-                    <ServiceCard title={'15 years of experience'} width={{ base: "120px", md: '400px' }}>
+                    <ServiceCard title={'15 years of experience'} desc={'Our extensive experience brings depth and reliability to everything we offer.'} width={{ base: "120px", md: '400px' }}>
                         <Box fontSize={{ base: "30px", md: '120px' }}>
                             <FaRegCheckCircle />
                         </Box>
                     </ServiceCard>
-                    <ServiceCard title={'High quality items'} width={{ base: "120px", md: '380px' }}>
+                    <ServiceCard title={'High quality items'} desc={'Discover excellence in every product,  performance, and sophistication'} width={{ base: "120px", md: '380px' }}>
                         <Box fontSize={{ base: "30px", md: '120px' }}>
                             <FaLuggageCart />
                         </Box>
@@ -76,7 +76,7 @@ const Home = () => {
                     <Box w={{ base: "348px", md: '580px' }}>
                         <Text color={'#00BFA5'} fontSize={{ base: "22px", md: '32px' }}>About Arkamart</Text>
                         <Text fontSize={{ base: "22px", md: '38px' }} fontWeight={'bold'} mt={'10px'}>BUDGET SHOPPING SOLUTION AT AFFORDABLE PRICES</Text>
-                        <Text color={'#6C87AE'} fontSize={{ base: "16px", md: '22px' }} mt={'10px'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam proin nibh cursus at sed sagittis amet, sed. Tristique id nibh lobortis
+                        <Text color={'#6C87AE'} fontSize={{ base: "16px", md: '22px' }} mt={'10px'}>Affordable quality, diverse products. From everyday essentials to trendy finds, our curated collection ensures cost-effectiveness without compromising excellence.
                         </Text>
                         <Button bgColor='#3A8EF6' color={'white'} colorScheme="teal" mt={'30px'} w={{ base: "155px", md: '215px' }} h={'55px'} rounded={'100px'}><BsChatQuote fontSize={'25px'} /> <Text fontSize={{ base: "14px", md: '18px' }} ml={'8px'}>Contact Us</Text></Button>
                     </Box>
@@ -136,11 +136,11 @@ const Home = () => {
                     </Flex>
                 </Box>
             </Box >
-            <Box w={'100vw'} h={'auto'} pb={'50px'} bgColor={'#F2F7FF'} id="contact">
+            <Box w={'100vw'} h={'auto'} pb={'180px'} bgColor={'#F2F7FF'} id="contact">
                 <Box display={'flex'} w={'80%'} mx={"auto"} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} pt={'12rem'}>
                     <Box w={{ base: "348px", md: "678px" }}>
                         <Text fontSize={{ base: "22px", md: '32px' }} fontWeight={'bold'} mt={'10px'} textAlign={'center'}>What our great customers say about ARKAMART</Text>
-                        <Text color={'#6C87AE'} fontSize={{ base: "22px", md: '32px' }} mt={'10px'} textAlign={'center'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</Text>
+                        <Text color={'#6C87AE'} fontSize={{ base: "22px", md: '32px' }} mt={'10px'} textAlign={'center'}>Here are testimonials from users who enjoy the feature with the collaborative filtering algorithm by item method</Text>
                         {/* <Flex w={'980px'}>
                     </Flex> */}
                     </Box>

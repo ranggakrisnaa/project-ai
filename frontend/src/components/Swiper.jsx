@@ -4,6 +4,7 @@ import "swiper/css";
 // import { Image } from '@chakra-ui/react';
 import UserTest from "./UserTest";
 import { useEffect, useRef } from "react";
+import UsersTest from "./UsersTest";
 // import { Box } from '@chakra-ui/react';
 
 const Swiper = () => {
@@ -51,13 +52,7 @@ const Swiper = () => {
                 <UserTest />
             </swiper-slide>
             <swiper-slide>
-                <UserTest />
-            </swiper-slide>
-            <swiper-slide>
-                <UserTest />
-            </swiper-slide>
-            <swiper-slide>
-                <UserTest />
+                <UsersTest />
             </swiper-slide>
         </swiper-container>
     );
