@@ -34,8 +34,8 @@ const Swiper = () => {
                     slidesPerView: 3,
                 },
             },
-            pagination: "true",
-            navigation: "true",
+            pagination: true,
+            navigation: true,
             spaceBetween: 20,
         };
 
